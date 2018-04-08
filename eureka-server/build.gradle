@@ -1,0 +1,17 @@
+group 'spring-cloud-demo'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter-parent:2.0.0.RELEASE'
+    compile 'org.springframework.cloud:spring-cloud-starter-eureka-server:1.4.3.RELEASE', {
+       exclude(module: 'servlet-api')
+    }
+}

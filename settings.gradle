@@ -1,0 +1,6 @@
+rootProject.name = 'spring-cloud-demo'
+include 'hello'
+include 'eureka-server'
+include 'ribbon-consumer'
+include 'hystrix-dashboard'
+
