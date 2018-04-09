@@ -1,0 +1,17 @@
+group 'spring-cloud-demo'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile 'org.springframework.cloud:spring-cloud-starter-parent:Edgware.SR3'
+    compile 'org.springframework.cloud:spring-cloud-starter-turbine-amqp:1.4.3.RELEASE'
+    compile 'org.springframework.boot:spring-boot-starter-actuator:1.5.10.RELEASE'
+}

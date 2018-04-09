@@ -3,4 +3,7 @@ include 'hello'
 include 'eureka-server'
 include 'ribbon-consumer'
 include 'hystrix-dashboard'
+include 'turbine'
+include 'turbine-amqp'
+include 'feign-consumer'
 
