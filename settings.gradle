@@ -6,4 +6,6 @@ include 'hystrix-dashboard'
 include 'turbine'
 include 'turbine-amqp'
 include 'feign-consumer'
+include 'hello-service-api'
+include 'api-gateway'
 

@@ -9,6 +9,7 @@ import org.springframework.cloud.client.serviceregistry.Registration;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Random;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
@@ -27,9 +28,12 @@ public class HelloController {
     private DiscoveryClient client;
 
     @RequestMapping(value = "/hello", method = GET)
-    public String index() {
+    public String index() throws Exception {
         List<ServiceInstance> list = client.getInstances(registration.getServiceId());
         if (list != null && list.size() > 0) {
+            int sleepTime = new Random().nextInt(3000);
+            logger.info("sleepTime:" + sleepTime);
+            Thread.sleep(sleepTime);
             logger.info("/hello, host:" + list.get(0).getHost() + ", service_id:" + list.get(0).getServiceId());
         }
         return "Hello World";
@@ -41,12 +45,12 @@ public class HelloController {
     }
 
     @RequestMapping(value = "/hello2", method = GET)
-    public User hello(@RequestHeader String name, @RequestHeader Integer age){
-       return new User(name, age);
+    public User hello(@RequestHeader String name, @RequestHeader Integer age) {
+        return new User(name, age);
     }
 
     @RequestMapping(value = "/hello3", method = POST)
-    public String hello(@RequestBody User user){
-       return "Hello " + user.getName() + ", " + user.getAge();
+    public String hello(@RequestBody User user) {
+        return "Hello " + user.getName() + ", " + user.getAge();
     }
 }

@@ -7,3 +7,13 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:1111/eureka/
+hello-service:
+  ribbon:
+    ConnectTimeout: 500
+    ReadTimeout: 2000
+    OkToRetryOnAllOperations: true
+    MaxAutoRetries: 1
+    MaxAutoRetriesNextServer: 2
+logging:
+  level:
+    com.feign.consumer.service.HelloService: DEBUG
