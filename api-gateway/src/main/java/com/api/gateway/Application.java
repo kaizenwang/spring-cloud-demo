@@ -21,4 +21,9 @@ public class Application {
     public AccessFilter accessFilter() {
         return new AccessFilter();
     }
+
+//    @Bean
+//    public PatternServiceRouteMapper serviceRouteMapper() {
+//        return new PatternServiceRouteMapper();
+//    }
 }
